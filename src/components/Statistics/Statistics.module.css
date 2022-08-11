@@ -1,0 +1,11 @@
+.stat_list{
+    margin-top: 15px;
+}
+
+.stat_list li{
+    margin-bottom: 5px;
+}
+
+.stat_list li:last-child{
+    margin-bottom: 0;
+}

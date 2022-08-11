@@ -1,0 +1,18 @@
+.btn_list{
+    display: flex;
+    margin-top: 15px;
+}
+
+.btn_list li{
+    margin-right: 15px;
+}
+
+.btn_list li:last-child{
+    margin-right: 0;
+}
+
+button{
+    padding: 5px 10px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
