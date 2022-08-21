@@ -12,11 +12,13 @@ export class App extends React.Component {
   }
 
   countTotalFeedback = () => {
-    return (Number(this.state.good + this.state.neutral + this.state.bad));
+    const { good, neutral, bad } = this.state;
+    return (Number(good + neutral + bad));
   }
   
   countPositiveFeedbackPercentage = () => { 
-    return (Math.round((this.state.good / this.countTotalFeedback()) * 100));
+    const { good } = this.state;
+    return (Math.round((good / this.countTotalFeedback()) * 100));
   }
 
   onLeaveFeedback = (event) => {
