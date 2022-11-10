@@ -10,8 +10,7 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const onLeaveFeedback = (event) => {
-    const option = event.target.className;
+  const onLeaveFeedback = option => {
     switch (option) {
       case 'good':
         setGood(state => state + 1);
@@ -34,7 +33,7 @@ export const App = () => {
   const countPositiveFeedbackPercentage = () => { 
     return (Math.round((good / countTotalFeedback()) * 100));
   }
-  
+  const options = Object.keys({good, neutral, bad});
   const total = countTotalFeedback();
   const percentage = countPositiveFeedbackPercentage();
     
@@ -42,7 +41,7 @@ export const App = () => {
     <>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={options}
           onLeaveFeedback={onLeaveFeedback} />
       </Section>
       <Section title="Statistics">
